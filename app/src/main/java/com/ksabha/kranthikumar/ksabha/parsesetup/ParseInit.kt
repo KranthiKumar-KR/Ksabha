@@ -29,16 +29,6 @@ class ParseInit(context: Context) {
                .server("http://52.15.210.157:80/parse/")
                .build()
        )
-       val parseObject = ParseObject("LoginObject")
-       parseObject.put("kranthi", "kranthi")
-       parseObject.saveInBackground({ ex ->
-           if (ex == null) {
-               Log.i("Parse Result", "Successful!")
-           } else {
-               Log.i("Parse Result", "Failed" + ex.toString())
-           }
-       })
-
 
         ParseUser.enableAutomaticUser()
 

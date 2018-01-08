@@ -1,4 +1,13 @@
 *.iml
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+obj/
+output.json
+Thumbs.db
 .gradle
 /local.properties
 /.idea/workspace.xml
@@ -7,3 +16,4 @@
 /build
 /captures
 .externalNativeBuild
+.idea

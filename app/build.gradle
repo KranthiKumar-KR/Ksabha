@@ -8,6 +8,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.ksabha.kranthikumar.ksabha"
+        multiDexEnabled true
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
