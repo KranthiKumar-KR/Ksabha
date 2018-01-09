@@ -7,7 +7,5 @@ package com.ksabha.kranthikumar.ksabha.model
 open class UserModel() {
     fun saveUser(user: String) {
     }
-    fun getUser(): User {
-      return User()
-    }
+    fun getUser(): User = User()
 }

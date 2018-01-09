@@ -27,6 +27,15 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:hint="username"/>
+    <EditText
+        android:id="@+id/signupEmailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Sign up!"/>
+        android:text="Sign up!"
+        android:onClick="onSignUpClicked"/>
 
 </LinearLayout>

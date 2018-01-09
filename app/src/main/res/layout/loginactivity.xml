@@ -33,7 +33,8 @@
         android:layout_below="@+id/passswordET"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:text="Login" />
+        android:text="Login"
+        android:onClick="onLoginClicked"/>
 
     <TextView
         android:id="@+id/editText3"
@@ -49,5 +50,6 @@
         android:maxLines="1"
         android:clickable="true"
         android:focusable="true"
-        android:text="not a member yet?, try signup!!" />
+        android:text="not a member yet?, try signup!!"
+        android:onClick="onSignUpTextClicked"/>
 </RelativeLayout>

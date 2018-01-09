@@ -8,4 +8,7 @@ import com.ksabha.kranthikumar.ksabha.base.MVPPresenter
  */
 interface LoginMVPPresenter<in V : LoginMVPView> : MVPPresenter<V> {
     fun startLogin(email: String, password: String)
+    fun onUserNameError()
+    fun onPasswordError()
+    fun onSuccess()
 }

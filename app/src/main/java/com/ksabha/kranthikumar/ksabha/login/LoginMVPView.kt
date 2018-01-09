@@ -8,7 +8,9 @@ import com.ksabha.kranthikumar.ksabha.base.MVPView
  * Copyright 2018 Savant Systems LLC. All rights reserved.
  */
 interface LoginMVPView : MVPView {
-    fun loadUserFeedActivity() : Unit {}
-    fun onLoginBtnClicked() : Unit {}
-    fun onSignBtnClicked() : Unit {}
+    fun loadUserFeedActivity()
+//    fun onLoginBtnClicked()
+//    fun onSignBtnClicked()
+    fun showUserNameError()
+    fun showPasswordError()
 }
