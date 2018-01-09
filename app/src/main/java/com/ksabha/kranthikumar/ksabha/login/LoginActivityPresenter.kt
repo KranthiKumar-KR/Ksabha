@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.ksabha.kranthikumar.ksabha.base.BasePresenter
 import com.ksabha.kranthikumar.ksabha.model.UserModel
 import com.ksabha.kranthikumar.ksabha.signup.SignUpActivity
+import com.ksabha.kranthikumar.ksabha.utils.LoginUtils
 import kotlinx.android.synthetic.main.loginactivity.*
 
 /**
@@ -19,21 +20,16 @@ class LoginActivityPresenter<in V : LoginActivity>(private val view: LoginActivi
             if (loginModel.getUser().password.equals(password)) {
                 TODO("not implemented parse set up") // Should load user feed activity on success
                 //onSuccess()
-            } else view.showUserNameError()
-        } else view.showPasswordError()
+            } else view.showPasswordError()
+        } else view.showUserNameError()
     }
 
-    override fun onUserNameError() {
-        view.let {
-            if (it.usernameET.text.toString() == "") it.showUserNameError()
-        }
-    }
+    override fun validateEmail() : Boolean =
+        LoginUtils.isValidEmail(view.usernameET.text.toString())
 
-    override fun onPasswordError() {
-        view.let {
-            if (it.passswordET.text.toString() == "") it.showPasswordError()
-        }
-    }
+
+    override fun validatePassword() : Boolean =
+        LoginUtils.isValidPassword(view.passswordET.text.toString())
 
     override fun onSuccess() {
         Toast.makeText(view,"login successful", Toast.LENGTH_SHORT).show()

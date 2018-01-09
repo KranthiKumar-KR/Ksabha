@@ -34,7 +34,7 @@ private val presenter = LoginActivityPresenter<LoginActivity> (this)
         presenter.startLogin(usernameET.text.toString(), passswordET.text.toString())
     }
 
-    fun onSignUpTextClicked() {
+    fun onSignUpTextClicked(view: View) {
         presenter.showSignUpPage()
     }
 }

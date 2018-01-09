@@ -1,5 +1,6 @@
 package com.ksabha.kranthikumar.ksabha.signup
 
+import android.widget.Toast
 import com.ksabha.kranthikumar.ksabha.base.BasePresenter
 import com.ksabha.kranthikumar.ksabha.utils.LoginUtils
 import kotlinx.android.synthetic.main.signupactivity.*
@@ -9,20 +10,22 @@ import kotlinx.android.synthetic.main.signupactivity.*
  * Copyright 2018 Savant Systems LLC. All rights reserved.
  */
 open class SignUpActivityPresenter<in V : SignUpActivity>(private val view: SignUpActivity) : BasePresenter<V>(), SignUpMVPPresenter<V> {
-    override fun validateUserEmail() {
-        if (!LoginUtils.isValidEmail(view.signupEmailET.text.toString())) view.showInvalidEmail()
-    }
+    override fun validateUserEmail() : Boolean =
+            LoginUtils.isValidEmail(view.signupEmailET.text.toString())
 
-    override fun validateUserPassword() {
-        if (!LoginUtils.isValidPassword(view.signupPasswordET.text.toString())) view.showInvalidPassword()
-    }
+    override fun validateUserPassword() : Boolean =
+            LoginUtils.isValidPassword(view.signupPasswordET.text.toString())
 
-    override fun checkUserAvailability() {
+    override fun checkUserAvailability() : Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun startSignUp() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (validateUserEmail()) {
+            if (validateUserPassword()) {
+                Toast.makeText(view, "signup successful", Toast.LENGTH_LONG).show()
+            } else view.showInvalidPassword()
+        } else view.showInvalidEmail()
     }
 
     fun loadUserFeed() {

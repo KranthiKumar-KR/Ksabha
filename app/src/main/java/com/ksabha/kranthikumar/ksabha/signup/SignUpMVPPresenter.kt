@@ -8,8 +8,8 @@ import com.ksabha.kranthikumar.ksabha.base.MVPView
  * Copyright 2018 Savant Systems LLC. All rights reserved.
  */
 interface SignUpMVPPresenter<in V : MVPView> : MVPPresenter<V> {
-    fun validateUserEmail()
-    fun validateUserPassword()
-    fun checkUserAvailability()
+    fun validateUserEmail() : Boolean
+    fun validateUserPassword() : Boolean
+    fun checkUserAvailability() : Boolean
     fun startSignUp()
 }
